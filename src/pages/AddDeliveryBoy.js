@@ -79,16 +79,8 @@ const AddDeliveryBoy = () => {
 
   const rowStyle = {
     display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
+    gap: '15px',
     marginBottom: '15px',
-  };
-
-  const labelStyle = {
-    flex: '0 0 30%',
-    fontWeight: 'bold',
-    color: '#555',
-    marginRight: '10px',
   };
 
   const inputStyle = {
@@ -126,33 +118,67 @@ const AddDeliveryBoy = () => {
     <div style={containerStyle}>
       <h2 style={formHeadingStyle}>Add Delivery Boy</h2>
       <form onSubmit={handleDeliveryBoySubmit}>
-        {[
-          { label: 'Delivery Boy Name', field: 'name' },
-          { label: 'Mobile Number', field: 'mobile' },
-          { label: 'Bike Number', field: 'bikeNumber' },
-          { label: 'License', field: 'license' },
-          { label: 'Pin Code', field: 'pinCode' },
-          { label: 'Address', field: 'address' },
-        ].map(({ label, field }) => (
-          <div key={field} style={rowStyle}>
-            <label style={labelStyle}>{label}</label>
-            <div style={{ flex: 1 }}>
-              <input
-                type="text"
-                style={{
-                  ...inputStyle,
-                  borderColor: errors[field] ? 'red' : '#ccc',
-                }}
-                value={deliveryBoyDetails[field]}
-                onChange={(e) =>
-                  setDeliveryBoyDetails({ ...deliveryBoyDetails, [field]: e.target.value })
-                }
-              />
-              {errors[field] && <div style={errorStyle}>{errors[field]}</div>}
-            </div>
-          </div>
-        ))}
-        <div style={{ marginBottom: '15px' }}>
+        <div style={rowStyle}>
+          <input
+            type="text"
+            style={inputStyle}
+            placeholder="Delivery Boy Name"
+            value={deliveryBoyDetails.name}
+            onChange={(e) =>
+              setDeliveryBoyDetails({ ...deliveryBoyDetails, name: e.target.value })
+            }
+          />
+          <input
+            type="text"
+            style={inputStyle}
+            placeholder="Mobile Number"
+            value={deliveryBoyDetails.mobile}
+            onChange={(e) =>
+              setDeliveryBoyDetails({ ...deliveryBoyDetails, mobile: e.target.value })
+            }
+          />
+        </div>
+        <div style={rowStyle}>
+          <input
+            type="text"
+            style={inputStyle}
+            placeholder="Bike Number"
+            value={deliveryBoyDetails.bikeNumber}
+            onChange={(e) =>
+              setDeliveryBoyDetails({ ...deliveryBoyDetails, bikeNumber: e.target.value })
+            }
+          />
+          <input
+            type="text"
+            style={inputStyle}
+            placeholder="License"
+            value={deliveryBoyDetails.license}
+            onChange={(e) =>
+              setDeliveryBoyDetails({ ...deliveryBoyDetails, license: e.target.value })
+            }
+          />
+        </div>
+        <div style={rowStyle}>
+          <input
+            type="text"
+            style={inputStyle}
+            placeholder="Pin Code"
+            value={deliveryBoyDetails.pinCode}
+            onChange={(e) =>
+              setDeliveryBoyDetails({ ...deliveryBoyDetails, pinCode: e.target.value })
+            }
+          />
+          <input
+            type="text"
+            style={inputStyle}
+            placeholder="Address"
+            value={deliveryBoyDetails.address}
+            onChange={(e) =>
+              setDeliveryBoyDetails({ ...deliveryBoyDetails, address: e.target.value })
+            }
+          />
+        </div>
+        <div style={rowStyle}>
           <button
             type="button"
             style={otpButtonStyle}
@@ -161,23 +187,15 @@ const AddDeliveryBoy = () => {
           >
             {otpSent ? 'OTP Sent' : 'Send OTP'}
           </button>
-        </div>
-        <div style={rowStyle}>
-          <label style={labelStyle}>Enter OTP</label>
-          <div style={{ flex: 1 }}>
-            <input
-              type="text"
-              style={{
-                ...inputStyle,
-                borderColor: errors.otp ? 'red' : '#ccc',
-              }}
-              value={deliveryBoyDetails.otpVerified}
-              onChange={(e) =>
-                setDeliveryBoyDetails({ ...deliveryBoyDetails, otpVerified: e.target.value })
-              }
-            />
-            {errors.otp && <div style={errorStyle}>{errors.otp}</div>}
-          </div>
+          <input
+            type="text"
+            style={inputStyle}
+            placeholder="Enter OTP"
+            value={deliveryBoyDetails.otpVerified}
+            onChange={(e) =>
+              setDeliveryBoyDetails({ ...deliveryBoyDetails, otpVerified: e.target.value })
+            }
+          />
         </div>
         <button style={buttonStyle} type="submit">
           Verify OTP
