@@ -21,6 +21,7 @@ import TotalOrders from "./pages/TotalOrders";
 import AdvancedLoginPage from "./pages/AdvancedLoginPage";
 import AddProduct from "./pages/AddProduct";
 import NewOrder from "./pages/NewOrder";
+
 // import AddDeliveryBoy from "./pages/AddDeliveryBoy";
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
 
 
           <Route path="/total-orders" element={<TotalOrders />} />
+          <Route path="/edit/:id" element={<AddDeliveryBoy />} />
 
           <Route path="/add-shop" element={<AddShop />} />
           <Route path="/add-delivery-boy" element={<AddDeliveryBoy />} />

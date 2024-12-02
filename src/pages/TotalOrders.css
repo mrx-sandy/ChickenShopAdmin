@@ -1,92 +1,163 @@
-.total-orders {
-    max-width: 68%;
+/* General Styles */
+.total-orders-container {
+    max-width: 1200px;
     margin: 20px auto;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
   
-  .table-title {
-    text-align: center;
-    font-size: 1.8rem;
-    color: #333;
+  .header-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
     margin-bottom: 20px;
   }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    max-width: 60%;
+  }
+  .filter-dropdown {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    width: 30%; /* Adjust percentage as needed */
+}
+
   
   .orders-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
   }
   
   .orders-table th,
   .orders-table td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
   }
   
   .orders-table th {
-    background-color: #e53935;
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  .orders-table td {
     background-color: #f9f9f9;
-  }
-  
-  .quantity-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-  }
-  
-  .quantity-btn {
-    border: none;
-    background-color: #e53935;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .quantity-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .quantity-value {
-    padding: 0 10px;
     font-weight: bold;
   }
   
-  .remove-btn {
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
+  .orders-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .status-btn {
     padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .status-btn.active {
+    background-color: #28a745;
+  }
+  
+  .status-btn.deactive {
+    background-color: #dc3545;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .icon-btn {
+    padding: 5px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
   }
   
-  .remove-btn:hover {
-    background-color: #a71d2a;
+  .icon-btn.view-btn {
+    background-color: #007bff;
+    color: white;
   }
   
-  @media screen and (max-width: 768px) {
-    .orders-table {
-      font-size: 0.9rem;
-    }
+  .icon-btn.edit-btn {
+    background-color: #ffc107;
+    color: white;
+  }
   
-    .quantity-btn,
-    .remove-btn {
-      padding: 5px;
-    }
+  .icon-btn.delete-btn {
+    background-color: #dc3545;
+    color: white;
+  }
   
-    .table-title {
-      font-size: 1.5rem;
+  .icon-btn:hover {
+    opacity: 0.8;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .pagination button:hover {
+    background-color: #f1f1f1;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+  .tablename {
+    font-size: 24px; /* Adjust heading size */
+    font-weight: bold; /* Make it bold */
+    color: #333; /* Neutral dark color for text */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 20px; /* Add spacing below the heading */
+    padding: 10px 0; /* Add vertical padding */
+    border-bottom: 2px solid #ddd; /* Optional bottom border for separation */
+    letter-spacing: 1px; /* Add letter spacing for better readability */
+    background-color: #f9f9f9; /* Subtle background color */
+    border-radius: 5px; /* Smooth rounded corners */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  @media (max-width: 768px) {
+    .tablename {
+      font-size: 20px; /* Slightly smaller font for mobile */
+      padding: 8px 0; /* Reduce padding */
     }
   }
   
+  @media (max-width: 480px) {
+    .tablename {
+      font-size: 18px; /* Further adjust for very small screens */
+    }
+  }
+    

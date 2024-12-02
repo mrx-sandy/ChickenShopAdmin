@@ -1,50 +1,80 @@
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #e53935;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #f8f8f8;
   }
   
-  .form-heading {
-    color: #e53935;
+  .delivery-form-container {
+    max-width: 800px;
+    margin: 180px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 48px rgba(0, 0, 0, 0.1);
     text-align: center;
+  }
+  
+  h2 {
+    font-size: 20px;
+    color: #333;
     margin-bottom: 20px;
   }
   
-  .form-label {
-    font-weight: bold;
-    color: #333;
+  .delivery-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
   
-  .btn-warning {
-    background-color: #e53935;
-    border: none;
+  .form-row {
+    display: flex;
+    gap: 15px;
+  }
+  .form-row input {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for shadow and border */
+  }
+  
+  .form-row input:focus {
+    border-color: #a30000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increases shadow on focus */
+    outline: none;
+  }
+  
+  .submit-button {
+    width: 120px; /* Set a fixed width */
+    padding: 10px;
+    font-size: 14px; /* Slightly smaller font size */
+    background-color: #a30000;
     color: white;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-warning:hover {
-    background-color: #c62828;
-  }
-  
-  .btn-primary {
-    background-color: #e53935;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px auto; /* Center align for small buttons */
   }
   
-  .btn-primary:hover {
-    background-color: #c62828;
+  .submit-button:hover {
+    background-color: #7e0000;
   }
   
-  .is-invalid {
-    border-color: #e53935;
+  
+  .success-message {
+    margin-top: 15px;
+    color: #28a745;
+    font-size: 16px;
   }
   
-  .invalid-feedback {
-    color: #e53935;
-    font-size: 0.9rem;
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-row {
+      flex-direction: column;
+    }
   }
+
   
