@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./TotalOrders.css";
 import { FaEye, FaEdit, FaTrashAlt } from "react-icons/fa";
+import "./TotalOrders.css";
 
 const TotalOrders = () => {
   const [orders, setOrders] = useState([
@@ -28,13 +28,12 @@ const TotalOrders = () => {
   };
 
   const handleView = (id) => {
-    const selectedOrder = orders.find((order) => order.id === id);
-    alert(`Viewing details for: ${selectedOrder.name}`);
+    navigate(`/order-details/${id}`); // Navigate to OrderDetails page
   };
 
   const handleEdit = (id) => {
     const selectedOrder = orders.find((order) => order.id === id);
-    navigate("/add-delivery-boy", { state: { orderData: selectedOrder } }); // Pass data using state
+    navigate("/add-delivery-boy", { state: { orderData: selectedOrder } });
   };
 
   const handleDelete = (id) => {

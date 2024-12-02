@@ -21,6 +21,8 @@ import TotalOrders from "./pages/TotalOrders";
 import AdvancedLoginPage from "./pages/AdvancedLoginPage";
 import AddProduct from "./pages/AddProduct";
 import NewOrder from "./pages/NewOrder";
+import OrderDetails from "./pages/OrderDetails";
+
 
 // import AddDeliveryBoy from "./pages/AddDeliveryBoy";
 
@@ -45,6 +47,7 @@ function App() {
           <Route path="/profile" element={<AdvancedLoginPage />} />
           <Route path="/add-product" element={<AddProduct />} />
 
+          <Route path="/order-details/:id" element={<OrderDetails />} />
 
 
           <Route path="/total-orders" element={<TotalOrders />} />
